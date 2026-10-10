@@ -1,14 +1,14 @@
 import { Router, type Request, type Response } from "express";
-import { zEnrollmentBody, zEnrollmentPutBody } from "../libs/zodValidators";
+import { zEnrollmentBody, zEnrollmentPutBody } from "../libs/zodValidators.js";
 
-import type { CustomRequest } from "../libs/types.ts";
+import type { CustomRequest } from "../libs/types";
 
 // import authentication middleware
-import { authenticateToken } from "../middlewares/authenMiddleware";
-import { checkRoles } from "../middlewares/checkRolesDBMiddleware";
+import { authenticateToken } from "../middlewares/authenMiddleware.js";
+import { checkRoles } from "../middlewares/checkRolesDBMiddleware.js";
 
 // import database
-import { PrismaClient } from "../../generated/prisma/client";
+import { PrismaClient } from "../../generated/prisma/client.js";
 const prisma = new PrismaClient();
 
 const router = Router();

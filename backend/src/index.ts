@@ -5,19 +5,19 @@ dotenv.config();
 // import middlewares
 import morgan from "morgan";
 import cors from "cors";
-import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware";
-import notFoundMiddleware from "./middlewares/notFoundMiddleware";
+import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware.js";
+import notFoundMiddleware from "./middlewares/notFoundMiddleware.js";
 
 // Check DB connection
-import { checkDatabaseConnection } from "./libs/checkDbConnection";
+import { checkDatabaseConnection } from "./libs/checkDbConnection.js";
 checkDatabaseConnection();
 
 // import routers
-import studentRouter_v3 from "./routes/studentsRoutes_v3";
-import courseRouter_v3 from "./routes/coursesRouters_v3";
-import userRouter_v3 from "./routes/usersRouters_v3";
-import fileRouter_v1 from "./routes/fileRouters_v1";
-import enrollmentRouter_v3 from "./routes/enrollmentsRouters_v3";
+import studentRouter_v3 from "./routes/studentsRoutes_v3.js";
+import courseRouter_v3 from "./routes/coursesRouters_v3.js";
+import userRouter_v3 from "./routes/usersRouters_v3.js";
+import fileRouter_v1 from "./routes/fileRouters_v1.js";
+import enrollmentRouter_v3 from "./routes/enrollmentsRouters_v3.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
