@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from "express";
 import { zEnrollmentBody, zEnrollmentPutBody } from "../libs/zodValidators.js";
 
-import type { CustomRequest } from "../libs/types";
+import type { CustomRequest } from "../libs/types.js";
 
 // import authentication middleware
 import { authenticateToken } from "../middlewares/authenMiddleware.js";
