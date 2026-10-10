@@ -5,19 +5,19 @@ dotenv.config();
 // import middlewares
 import morgan from "morgan";
 import cors from "cors";
-import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware.ts";
-import notFoundMiddleware from "./middlewares/notFoundMiddleware.ts";
+import invalidJsonMiddleware from "./middlewares/invalidJsonMiddleware";
+import notFoundMiddleware from "./middlewares/notFoundMiddleware";
 
 // Check DB connection
-import { checkDatabaseConnection } from "./libs/checkDbConnection.ts";
+import { checkDatabaseConnection } from "./libs/checkDbConnection";
 checkDatabaseConnection();
 
 // import routers
-import studentRouter_v3 from "./routes/studentsRoutes_v3.ts";
-import courseRouter_v3 from "./routes/coursesRouters_v3.ts";
-import userRouter_v3 from "./routes/usersRouters_v3.ts";
-import fileRouter_v1 from "./routes/fileRouters_v1.ts";
-import enrollmentRouter_v3 from "./routes/enrollmentsRouters_v3.ts";
+import studentRouter_v3 from "./routes/studentsRoutes_v3";
+import courseRouter_v3 from "./routes/coursesRouters_v3";
+import userRouter_v3 from "./routes/usersRouters_v3";
+import fileRouter_v1 from "./routes/fileRouters_v1";
+import enrollmentRouter_v3 from "./routes/enrollmentsRouters_v3";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -42,7 +42,7 @@ app.use(invalidJsonMiddleware);
 
 // Endpoints
 app.get("/", (req: Request, res: Response) => {
-  res.send("Lecture10 API services");
+  res.send("Lab19 API services");
 });
 
 app.get("/me", (req: Request, res: Response) => {
@@ -50,9 +50,9 @@ app.get("/me", (req: Request, res: Response) => {
     success: true,
     message: "Student Information",
     data: {
-      studentId: "600610999",
-      firstName: "Dome",
-      lastName: "Potikanond",
+      studentId: "680610649",
+      firstName: "Korrawit",
+      lastName: "Yawichai",
       program: "CPE",
       section: "001",
     },
@@ -72,6 +72,8 @@ app.use(notFoundMiddleware);
 app.listen(port, () => {
   console.log(`🚀 Server running on http://localhost:${port}`);
 });
+
+// test for lab19
 
 // Export app for vercel deployment
 export default app;
